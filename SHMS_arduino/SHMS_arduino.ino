@@ -25,7 +25,7 @@ void setup() {
 
   pulseSensor.analogInput(PulseWire);     // set analogInput for pulse sensor to the PulseWire pin (analog pin)
   pulseSensor.setThreshold(Threshold);    // set threshold value 
-  pulseSensor.begin();                    // begin pulse sensor playground
+  pulseSensor.begin();                    // begin pulseSensor playground
 }
 
 void loop() {
