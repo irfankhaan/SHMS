@@ -15,7 +15,7 @@ SHMS shows details of it's patients and doctors and it also shows recordings of 
 
 ## Schematics
 ### Schematic 
-![SHMS WORKING](https://github.com/irfankhaan/SHMS/blob/main/SHMS_WORKING_bb.png)
+![SHMS WORKING](https://github.com/irfankhaan/IoT-based-SHMS/blob/main/SHMS_WORKING_bb.png)
 ### Schematic for uploading code to ESP 8266
-![while uploading code to ESP 8266](https://github.com/irfankhaan/SHMS/blob/main/SHMS_UploadingToESP_bb.png)
+![while uploading code to ESP 8266](https://github.com/irfankhaan/IoT-based-SHMS/blob/main/SHMS_UploadingToESP_bb.png)
 
