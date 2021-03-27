@@ -8,7 +8,7 @@
 #define WIFI_SSID "YOUR_WiFi_SSID"   // Enter WiFi SSID
 #define WIFI_PASSWORD "YOUR_WiFI_password"    // Enter WiFi passwords
 
-const long utcOffsetInSeconds = 19800;    // UTC offset for GMT +5:30
+const long utcOffsetInSeconds = 19800;    // UTC offset for GMT +5:30 in seconds
 WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP, "asia.pool.ntp.org", utcOffsetInSeconds);
 
@@ -42,7 +42,7 @@ void loop() {
   
   if(Sr==true){  
 
-  bpm = sensor_data.substring(0, sensor_data.indexOf(","));
+  bpm = sensor_data.substring(0, sensor_data.indexOf(",")); // parse values from serial monitor to push to Firebase
   bpm_val = bpm.substring(bpm.indexOf(" ")+1);
   sensor_data.remove(0, sensor_data.indexOf(",")+1);
 
