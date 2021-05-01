@@ -7,7 +7,7 @@
 #include <DHT_U.h>
 
 const int PulseWire = 0;      // input signal read pin for pulse sensor (analog pin)
-int tempPin = 1, temp_val, sensePin = 12, setTime = 500, myBPM, Threshold = 550; // tempPin for LM35 SENSOR, sensPin for DHT111 sensor, setTime for delay, myBPM and Threshold for pulse sensor
+int tempPin = 3, temp_val, sensePin = 12, setTime = 512, myBPM, Threshold = 510; // tempPin (analog pin) for LM35 SENSOR, sensPin for DHT111 sensor, setTime for delay, myBPM and Threshold for pulse sensor
 float mv, cel, room_temp, humidity;     // variables for sesnor inputs
 String values;                // string to be printed in serial monitor
 
@@ -25,7 +25,7 @@ void setup() {
 
   pulseSensor.analogInput(PulseWire);     // set analogInput for pulse sensor to the PulseWire pin (analog pin)
   pulseSensor.setThreshold(Threshold);    // set threshold value 
-  pulseSensor.begin();                    // begin pulseSensor playground
+  pulseSensor.begin();                    // begin pulse sensor playground
 }
 
 void loop() {
@@ -81,8 +81,9 @@ String get_body_temp(){
     
     delay(100);
     temp_val = analogRead(tempPin);     // read temperature value from LM35
-    mv = ( temp_val/1023.0)*5000;            // convert voltage value to temperature
+    mv = temp_val*(1100 / 1024.0);            // convert voltage value to temperature
     cel = mv/10;                        // convert temperature to celcius
+    cel = cel + 30;
 
     LCD.setCursor(0,0);
     LCD.print("Body Temp ");     
